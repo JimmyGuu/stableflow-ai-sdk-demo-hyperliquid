@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useEVMWallet } from "../providers/evm-wallet";
-import { formatNumber } from "@/utils";
+import { formatNumber, bigIntToString } from "@/utils";
 import Big from "big.js";
 import { useDebounceFn, useRequest } from "ahooks";
 import InputNumber from "@/components/input-number";
@@ -135,7 +135,7 @@ export default function Home() {
 
       const depositId = res.data?.depositId;
       if (depositId != null) {
-        addHistory(depositId + "", quoteRes);
+        addHistory(depositId + "", bigIntToString(quoteRes));
       }
 
       alert("Deposit submitted successfully. Please check the history for progress.");

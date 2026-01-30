@@ -33,6 +33,7 @@ export const useHistoryStore = create<HistoryState>()(
     }),
     {
       name: "hyperliquid-deposit-history",
+      version: 0.1,
       storage: createJSONStorage(() => localStorage),
     }
   )
