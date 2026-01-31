@@ -8,7 +8,7 @@ import { useDebounceFn, useRequest } from "ahooks";
 import InputNumber from "@/components/input-number";
 import { useHistoryStore } from "@/stores/history";
 
-import { Hyperliquid, HyperliquidFromTokens, HyperliquidQuoteParams, HyperliuquidToToken, HyperliuquidMinAmount } from "@jimmygu/sfa-sdk-test";
+import { Hyperliquid, HyperliquidFromTokens, HyperliquidQuoteParams, HyperliuquidToToken, HyperliuquidMinAmount } from "stableflow-ai-sdk";
 
 // This example only demonstrates tokens on EVM chains
 const fromTokens = HyperliquidFromTokens.filter((token) => token.chainType === "evm");
@@ -57,8 +57,12 @@ export default function Home() {
     };
   };
   const { runAsync: handleQuote, loading: quoting } = useRequest(async (dry?: boolean) => {
-    setQuote(null);
+    if (dry) {
+      setQuote(null);
+    }
+
     if (!wallet?.account || !fromToken || !amount || Big(amount).lte(0)) {
+      setQuote(null);
       return;
     }
 

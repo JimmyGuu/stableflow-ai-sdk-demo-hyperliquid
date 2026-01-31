@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
-import { EVMWallet, tokens } from '@jimmygu/sfa-sdk-test';
+import { EVMWallet, tokens } from 'stableflow-ai-sdk';
 import { Chain } from "viem";
 import { useAccount, useSwitchChain } from "wagmi";
 

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useHistoryStore } from "@/stores/history";
 import { formatNumber } from "@/utils";
-import { Hyperliquid, HyperliquidDepositStatusResponseData } from "@jimmygu/sfa-sdk-test";
+import { Hyperliquid, HyperliquidDepositStatusResponseData } from "stableflow-ai-sdk";
 
 const HistoryPage = () => {
   const router = useRouter();

@@ -1,6 +1,6 @@
 "use client";
 
-import { OpenAPI, setRpcUrls } from "@jimmygu/sfa-sdk-test";
+import { OpenAPI, setRpcUrls } from "stableflow-ai-sdk";
 
 // Configure SDK
 OpenAPI.BASE = process.env.NEXT_PUBLIC_STABLEFLOW_API_URL || 'https://api.stableflow.ai';
